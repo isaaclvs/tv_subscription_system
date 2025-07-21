@@ -1,5 +1,6 @@
 <h1>Clientes</h1>
-<%= link_to "← Voltar", root_path %>
+<%= link_to "← Voltar", root_path %> |
+<%= link_to "New Customer", new_customer_path %>
 
 <table border="1">
   <thead>
@@ -16,7 +17,11 @@
         <td><%= customer.name %></td>
         <td><%= customer.age %> anos</td>
         <td><%= customer.subscriptions.count %> assinatura(s)</td>
-        <td><%= link_to "Ver", customer_path(customer) %></td>
+        <td>
+          <%= link_to "View", customer_path(customer) %> |
+          <%= link_to "Edit", edit_customer_path(customer) %> |
+          <%= link_to "Delete", customer_path(customer), method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
