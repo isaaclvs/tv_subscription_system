@@ -9,7 +9,7 @@ class CreateAccounts < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
-    
-    add_index :accounts, [:subscription_id, :item_type, :item_id, :due_date], unique: true, name: 'index_accounts_uniqueness'
+
+    add_index :accounts, [ :subscription_id, :item_type, :item_id, :due_date ], unique: true, name: 'index_accounts_uniqueness'
   end
 end

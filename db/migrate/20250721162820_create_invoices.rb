@@ -8,7 +8,7 @@ class CreateInvoices < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
-    
-    add_index :invoices, [:subscription_id, :month_year], unique: true
+
+    add_index :invoices, [ :subscription_id, :month_year ], unique: true
   end
 end

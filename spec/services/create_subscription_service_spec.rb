@@ -12,7 +12,7 @@ RSpec.describe CreateSubscriptionService do
 
       it 'creates subscription successfully' do
         result = service.call
-        
+
         expect(result.success?).to be true
         expect(result.subscription).to be_persisted
         expect(result.subscription.customer).to eq customer
@@ -23,7 +23,7 @@ RSpec.describe CreateSubscriptionService do
       it 'creates billing automatically' do
         result = service.call
         subscription = result.subscription
-        
+
         expect(subscription.booklet).to be_present
         expect(subscription.invoices.count).to eq 12
         expect(subscription.accounts.count).to eq 12
@@ -34,7 +34,7 @@ RSpec.describe CreateSubscriptionService do
       it 'fails when both plan and package provided' do
         service = described_class.new(customer: customer, plan: plan, package: package)
         result = service.call
-        
+
         expect(result.success?).to be false
         expect(result.errors).to include("Cannot have both plan and package")
       end
@@ -42,7 +42,7 @@ RSpec.describe CreateSubscriptionService do
       it 'fails when neither plan nor package provided' do
         service = described_class.new(customer: customer)
         result = service.call
-        
+
         expect(result.success?).to be false
         expect(result.errors).to include("Must have either plan or package")
       end

@@ -78,7 +78,7 @@ family_package.save!
 
 # Pacote Premium (Plano Premium + Netflix + Amazon + Apple TV)
 premium_package = Package.new(
-  name: "Pacote Premium All-in-One", 
+  name: "Pacote Premium All-in-One",
   plan: Plan.find_by(name: "Plano Premium")
 )
 premium_package.additional_services << AdditionalService.find_by(name: "Netflix Premium")
@@ -92,7 +92,7 @@ ultra_package = Package.new(
   plan: Plan.find_by(name: "Plano Ultra HD")
 )
 ultra_package.additional_services << AdditionalService.find_by(name: "Netflix Premium")
-ultra_package.additional_services << AdditionalService.find_by(name: "HBO Max") 
+ultra_package.additional_services << AdditionalService.find_by(name: "HBO Max")
 ultra_package.additional_services << AdditionalService.find_by(name: "Disney Plus")
 ultra_package.additional_services << AdditionalService.find_by(name: "Globoplay")
 ultra_package.save!
@@ -110,7 +110,7 @@ hbo_service = AdditionalService.find_by(name: "HBO Max")
 result1 = CreateSubscriptionService.new(
   customer: joao,
   plan: basic_plan,
-  additional_services: [hbo_service]
+  additional_services: [ hbo_service ]
 ).call
 
 puts "   João Silva: Plano Básico + HBO Max (#{result1.success? ? 'SUCESSO' : 'ERRO'})"
@@ -135,7 +135,7 @@ crunchyroll = AdditionalService.find_by(name: "Crunchyroll")
 result3 = CreateSubscriptionService.new(
   customer: pedro,
   plan: premium_plan,
-  additional_services: [globoplay, crunchyroll]
+  additional_services: [ globoplay, crunchyroll ]
 ).call
 
 puts "   Pedro Oliveira: Plano Premium + 2 serviços (#{result3.success? ? 'SUCESSO' : 'ERRO'})"
@@ -170,7 +170,7 @@ puts "=" * 50
 
 puts "DADOS PRINCIPAIS:"
 puts "   - Clientes: #{Customer.count}"
-puts "   - Planos: #{Plan.count}" 
+puts "   - Planos: #{Plan.count}"
 puts "   - Serviços Adicionais: #{AdditionalService.count}"
 puts "   - Pacotes: #{Package.count}"
 puts "   - Assinaturas: #{Subscription.count}"

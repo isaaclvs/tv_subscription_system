@@ -6,7 +6,7 @@ class CreatePackageServices < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
-    
-    add_index :package_services, [:package_id, :additional_service_id], unique: true, name: 'index_package_services_uniqueness'
+
+    add_index :package_services, [ :package_id, :additional_service_id ], unique: true, name: 'index_package_services_uniqueness'
   end
 end
