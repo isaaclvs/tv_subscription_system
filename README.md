@@ -136,7 +136,17 @@ rspec spec/models/
 rspec spec/services/
 ```
 
-**Cobertura atual: 88.94% (185/208 linhas)**
+## Status dos Testes
+
+Segue exemplo da saída atual dos testes RSpec:
+
+```bash
+$ rspec
+92 examples, 0 failures, 9 pending
+
+Coverage report generated for RSpec to coverage/.
+Line Coverage: 88.08% (340 / 386)
+```
 
 ## Demonstração das Funcionalidades
 
