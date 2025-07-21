@@ -13,4 +13,5 @@
 <h2>Total Price</h2>
 <p>R$ <%= '%.2f' % @package.price %></p>
 
+<a href="<%= edit_package_path(@package) %>">Edit Package</a> |
 <a href="<%= packages_path %>">Back to Packages</a>

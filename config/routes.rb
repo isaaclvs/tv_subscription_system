@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   get "customers/show"
   root "home#index"
 
-  resources :customers, only: [ :index, :show ]
-  resources :plans, only: [ :index, :show ]
-  resources :additional_services, only: [ :index, :show ]
-  resources :packages, only: [ :index, :show ]
-  resources :subscriptions, only: [ :index, :show ]
+  resources :customers
+  resources :plans
+  resources :additional_services
+  resources :packages
+  resources :subscriptions, only: [ :index, :show, :new, :create ]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -1,0 +1,30 @@
+<h1>New Plan</h1>
+
+<%= form_with(model: @plan, local: true) do |form| %>
+  <% if @plan.errors.any? %>
+    <div>
+      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+      <ul>
+        <% @plan.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price, step: 0.01, min: 0 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<a href="<%= plans_path %>">Back to Plans</a>

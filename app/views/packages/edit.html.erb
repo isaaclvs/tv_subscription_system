@@ -1,0 +1,46 @@
+<h1>Edit Package</h1>
+
+<%= form_with(model: @package, local: true) do |form| %>
+  <% if @package.errors.any? %>
+    <div>
+      <h2><%= pluralize(@package.errors.count, "error") %> prohibited this package from being saved:</h2>
+      <ul>
+        <% @package.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :plan_id, "Plan" %>
+    <%= form.select :plan_id, options_from_collection_for_select(@plans, :id, :name, @package.plan_id), { prompt: "Select a Plan" } %>
+  </div>
+
+  <div>
+    <%= form.label :additional_service_ids, "Additional Services" %>
+    <% @additional_services.each do |service| %>
+      <div>
+        <%= check_box_tag "package[additional_service_ids][]", service.id, @package.additional_services.include?(service) %>
+        <%= label_tag "package_additional_service_ids_#{service.id}", "#{service.name} - R$ #{sprintf('%.2f', service.price)}" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :price, "Price (optional - will auto-calculate if blank)" %>
+    <%= form.number_field :price, step: 0.01, min: 0 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<a href="<%= package_path(@package) %>">Show</a> |
+<a href="<%= packages_path %>">Back to Packages</a>

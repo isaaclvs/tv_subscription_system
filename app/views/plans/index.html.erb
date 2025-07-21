@@ -1,4 +1,5 @@
 <h1>Plans</h1>
+<a href="<%= new_plan_path %>">New Plan</a>
 
 <table border="1">
   <thead>
@@ -13,7 +14,11 @@
       <tr>
         <td><%= plan.name %></td>
         <td>R$ <%= '%.2f' % plan.price %></td>
-        <td><a href="<%= plan_path(plan) %>">View</a></td>
+        <td>
+          <a href="<%= plan_path(plan) %>">View</a> |
+          <a href="<%= edit_plan_path(plan) %>">Edit</a> |
+          <a href="<%= plan_path(plan) %>" data-method="delete" data-confirm="Are you sure?">Delete</a>
+        </td>
       </tr>
     <% end %>
   </tbody>

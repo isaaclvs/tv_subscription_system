@@ -1,4 +1,5 @@
 <h1>Additional Services</h1>
+<a href="<%= new_additional_service_path %>">New Additional Service</a>
 
 <table border="1">
   <thead>
@@ -13,7 +14,11 @@
       <tr>
         <td><%= service.name %></td>
         <td>R$ <%= '%.2f' % service.price %></td>
-        <td><a href="<%= additional_service_path(service) %>">View</a></td>
+        <td>
+          <a href="<%= additional_service_path(service) %>">View</a> |
+          <a href="<%= edit_additional_service_path(service) %>">Edit</a> |
+          <a href="<%= additional_service_path(service) %>" data-method="delete" data-confirm="Are you sure?">Delete</a>
+        </td>
       </tr>
     <% end %>
   </tbody>
