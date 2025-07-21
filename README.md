@@ -36,7 +36,7 @@ Sistema completo de gerenciamento de assinaturas de TV desenvolvido em Rails seg
 
 ```bash
 # Clone o repositório
-git clone [url]
+git clone https://github.com/isaaclvs/tv_subscription_system.git
 cd tv_subscription_system
 
 # Instale dependências
