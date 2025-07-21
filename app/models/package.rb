@@ -2,6 +2,7 @@ class Package < ApplicationRecord
   belongs_to :plan
   has_many :package_services, dependent: :destroy
   has_many :additional_services, through: :package_services
+  has_many :subscriptions, dependent: :destroy
   
   validates :name, presence: true
   validates :price, numericality: { greater_than: 0 }, allow_nil: true

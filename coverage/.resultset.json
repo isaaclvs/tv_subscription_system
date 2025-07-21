@@ -12,6 +12,11 @@
           1,
           1,
           1,
+          1,
+          1,
+          null,
+          1,
+          1,
           null
         ]
       },
@@ -25,6 +30,8 @@
       "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/customer.rb": {
         "lines": [
           1,
+          1,
+          null,
           1,
           1,
           null
@@ -42,6 +49,7 @@
       },
       "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/package.rb": {
         "lines": [
+          1,
           1,
           1,
           1,
@@ -71,9 +79,69 @@
         "lines": [
           1,
           1,
+          1,
           null,
           1,
           1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/subscription_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/subscription.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
           null
         ]
       },
@@ -99,6 +167,6 @@
         "branches": {}
       }
     },
-    "timestamp": 1753114493
+    "timestamp": 1753115226
   }
 }
