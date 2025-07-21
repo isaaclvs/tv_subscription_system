@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_21_161749) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_21_162825) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.bigint "subscription_id", null: false
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.decimal "amount", precision: 10, scale: 2, null: false
+    t.date "due_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id", "item_type", "item_id", "due_date"], name: "index_accounts_uniqueness", unique: true
+    t.index ["subscription_id"], name: "index_accounts_on_subscription_id"
+  end
 
   create_table "additional_services", force: :cascade do |t|
     t.string "name"
@@ -21,11 +33,30 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_21_161749) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "booklets", force: :cascade do |t|
+    t.bigint "subscription_id", null: false
+    t.decimal "total_amount", precision: 10, scale: 2, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_booklets_on_subscription_id", unique: true
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.bigint "subscription_id", null: false
+    t.string "month_year", null: false
+    t.decimal "total_amount", precision: 10, scale: 2, null: false
+    t.date "due_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id", "month_year"], name: "index_invoices_on_subscription_id_and_month_year", unique: true
+    t.index ["subscription_id"], name: "index_invoices_on_subscription_id"
   end
 
   create_table "package_services", force: :cascade do |t|
@@ -76,6 +107,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_21_161749) do
     t.check_constraint "plan_id IS NOT NULL AND package_id IS NULL OR plan_id IS NULL AND package_id IS NOT NULL", name: "subscriptions_plan_or_package_xor"
   end
 
+  add_foreign_key "accounts", "subscriptions"
+  add_foreign_key "booklets", "subscriptions"
+  add_foreign_key "invoices", "subscriptions"
   add_foreign_key "package_services", "additional_services"
   add_foreign_key "package_services", "packages"
   add_foreign_key "packages", "plans"

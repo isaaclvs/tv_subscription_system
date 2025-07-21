@@ -7,6 +7,27 @@
           null
         ]
       },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/account.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/additional_service.rb": {
         "lines": [
           1,
@@ -20,8 +41,13 @@
           null
         ]
       },
-      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/application_record.rb": {
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/booklet.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           null
@@ -32,6 +58,19 @@
           1,
           1,
           null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/invoice.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
           1,
           1,
           null
@@ -108,6 +147,10 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          1,
           1,
           null,
           1,
@@ -167,6 +210,6 @@
         "branches": {}
       }
     },
-    "timestamp": 1753115226
+    "timestamp": 1753115879
   }
 }
