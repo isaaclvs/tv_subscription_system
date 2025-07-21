@@ -11,15 +11,6 @@ Sistema completo de gerenciamento de assinaturas de TV desenvolvido em Rails seg
 - **Service Objects**: Lógica complexa isolada em services
 - **Cobertura de Testes**: 88%+ com RSpec
 
-## Stack Tecnológica
-
-- **Ruby**: 3.4.0
-- **Rails**: 8.0.2
-- **Database**: PostgreSQL
-- **Testes**: RSpec + Factory Bot + SimpleCov
-- **Qualidade**: Rubocop
-- **Styling**: Tailwind CSS (inline)
-
 ## Arquitetura
 
 ### Models
