@@ -1,2 +1,45 @@
-<h1>Customers#show</h1>
-<p>Find me in app/views/customers/show.html.erb</p>
+<h1><%= @customer.name %></h1>
+
+<h2>Details</h2>
+<p>Name: <%= @customer.name %></p>
+<p>Age: <%= @customer.age %> years</p>
+
+<h2>Subscriptions</h2>
+<% if @customer.subscriptions.any? %>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Plan/Package</th>
+        <th>Additional Services</th>
+        <th>Created</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customer.subscriptions.each do |subscription| %>
+        <tr>
+          <td><%= subscription.plan ? 'Plan' : 'Package' %></td>
+          <td>
+            <% if subscription.plan %>
+              <%= subscription.plan.name %> - R$ <%= '%.2f' % subscription.plan.price %>
+            <% else %>
+              <%= subscription.package.name %> - R$ <%= '%.2f' % subscription.package.price %>
+            <% end %>
+          </td>
+          <td>
+            <% subscription.additional_services.each do |service| %>
+              <%= service.name %><br>
+            <% end %>
+          </td>
+          <td><%= subscription.created_at.strftime('%d/%m/%Y') %></td>
+          <td><a href="<%= subscription_path(subscription) %>">View</a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No subscriptions found.</p>
+<% end %>
+
+<a href="<%= customers_path %>">Back to Customers</a>

@@ -1,2 +1,65 @@
-<h1>Subscriptions#show</h1>
-<p>Find me in app/views/subscriptions/show.html.erb</p>
+<h1>Subscription Details</h1>
+
+<h2>Customer</h2>
+<p><a href="<%= customer_path(@subscription.customer) %>"><%= @subscription.customer.name %></a> (<%= @subscription.customer.age %> years)</p>
+
+<h2>Plan/Package</h2>
+<% if @subscription.plan %>
+  <p><strong>Plan:</strong> <%= @subscription.plan.name %></p>
+  <p><strong>Price:</strong> R$ <%= '%.2f' % @subscription.plan.price %></p>
+<% else %>
+  <p><strong>Package:</strong> <%= @subscription.package.name %></p>
+  <p><strong>Price:</strong> R$ <%= '%.2f' % @subscription.package.price %></p>
+  <p><strong>Included Services:</strong></p>
+  <ul>
+    <% @subscription.package.additional_services.each do |service| %>
+      <li><%= service.name %> - R$ <%= '%.2f' % service.price %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h2>Additional Services</h2>
+<% if @subscription.additional_services.any? %>
+  <ul>
+    <% @subscription.additional_services.each do |service| %>
+      <li><%= service.name %> - R$ <%= '%.2f' % service.price %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No additional services.</p>
+<% end %>
+
+<h2>Billing Information</h2>
+<% if @subscription.booklet %>
+  <p><strong>Total Annual Amount:</strong> R$ <%= '%.2f' % @subscription.booklet.total_amount %></p>
+  <p><strong>Monthly Invoices:</strong> <%= @subscription.invoices.count %></p>
+  <p><strong>Next Due Date:</strong> <%= @subscription.invoices.where('due_date > ?', Date.current).order(:due_date).first&.due_date&.strftime('%d/%m/%Y') || 'N/A' %></p>
+<% end %>
+
+<h2>Recent Invoices</h2>
+<% if @subscription.invoices.any? %>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Month/Year</th>
+        <th>Amount</th>
+        <th>Due Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @subscription.invoices.limit(6).each do |invoice| %>
+        <tr>
+          <td><%= invoice.month_year %></td>
+          <td>R$ <%= '%.2f' % invoice.total_amount %></td>
+          <td><%= invoice.due_date.strftime('%d/%m/%Y') %></td>
+          <td><%= invoice.due_date > Date.current ? 'Pending' : 'Due' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<p><strong>Created:</strong> <%= @subscription.created_at.strftime('%d/%m/%Y at %H:%M') %></p>
+
+<a href="<%= subscriptions_path %>">Back to Subscriptions</a>
