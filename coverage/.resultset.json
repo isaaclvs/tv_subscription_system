@@ -1,0 +1,549 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/helpers/additional_services_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/helpers/customers_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/helpers/home_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/helpers/packages_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/helpers/plans_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/helpers/subscriptions_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/account.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/additional_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/booklet.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/customer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/invoice.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/package_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/package.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/plan.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/subscription_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/subscription.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          7,
+          null,
+          0,
+          null,
+          null,
+          1,
+          7,
+          null,
+          0,
+          null,
+          null,
+          1,
+          7,
+          7,
+          null,
+          0,
+          null,
+          null,
+          1,
+          7,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/services/billing_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          6,
+          6,
+          null,
+          null,
+          1,
+          6,
+          null,
+          5,
+          null,
+          null,
+          1,
+          null,
+          1,
+          6,
+          0,
+          0,
+          null,
+          null,
+          6,
+          1,
+          1,
+          null,
+          null,
+          5,
+          null,
+          null,
+          1,
+          5,
+          5,
+          5,
+          null,
+          null,
+          5,
+          null,
+          0,
+          null,
+          null,
+          1,
+          5,
+          60,
+          60,
+          null,
+          60,
+          60,
+          null,
+          null,
+          null,
+          1,
+          60,
+          60,
+          null,
+          60,
+          null,
+          null,
+          1,
+          60,
+          null,
+          null,
+          60,
+          60,
+          0,
+          0,
+          null,
+          null,
+          null,
+          60,
+          0,
+          null,
+          null,
+          60,
+          null,
+          null,
+          1,
+          60,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          60,
+          null,
+          60,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          5,
+          null,
+          5,
+          null,
+          null,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/services/create_subscription_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          4,
+          4,
+          null,
+          4,
+          null,
+          null,
+          1,
+          4,
+          1,
+          3,
+          1,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          0,
+          null,
+          null,
+          1,
+          4,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          2,
+          2,
+          null,
+          null,
+          2,
+          null,
+          0,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          2,
+          0,
+          null,
+          null,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/controllers/additional_services_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/controllers/customers_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/controllers/packages_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/controllers/plans_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/controllers/subscriptions_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {}
+      }
+    },
+    "timestamp": 1753119193
+  }
+}

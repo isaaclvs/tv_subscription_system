@@ -1,0 +1,36 @@
+<h1>Sistema de TV por Assinatura</h1>
+
+<h2>Dados do Sistema</h2>
+<ul>
+  <li><strong>Clientes:</strong> <%= Customer.count %> cadastrados - <%= link_to "Ver Clientes", customers_path %></li>
+  <li><strong>Planos:</strong> <%= Plan.count %> disponíveis - <%= link_to "Ver Planos", plans_path %></li>
+  <li><strong>Serviços Adicionais:</strong> <%= AdditionalService.count %> disponíveis - <%= link_to "Ver Serviços", additional_services_path %></li>
+  <li><strong>Pacotes:</strong> <%= Package.count %> disponíveis - <%= link_to "Ver Pacotes", packages_path %></li>
+  <li><strong>Assinaturas:</strong> <%= Subscription.count %> ativas - <%= link_to "Ver Assinaturas", subscriptions_path %></li>
+</ul>
+
+<h2>Estatísticas de Faturamento</h2>
+<ul>
+  <li><strong>Faturas:</strong> <%= Invoice.count %></li>
+  <li><strong>Contas:</strong> <%= Account.count %></li>
+  <li><strong>Carnês:</strong> <%= Booklet.count %></li>
+  <li><strong>Faturamento Anual:</strong> R$ <%= number_with_precision(Booklet.sum(:total_amount), precision: 2) %></li>
+</ul>
+
+<h2>Funcionalidades Implementadas</h2>
+
+<h3>Validações:</h3>
+<ul>
+  <li>XOR: Plano OU Pacote (nunca ambos)</li>
+  <li>Idade mínima 18 anos</li>
+  <li>Serviços únicos por assinatura</li>
+  <li>Auto-pricing de pacotes</li>
+</ul>
+
+<h3>Sistema:</h3>
+<ul>
+  <li>Faturamento automático (12 meses)</li>
+  <li>Service objects para lógica complexa</li>
+  <li>Database constraints</li>
+  <li>Testes com 88% coverage</li>
+</ul>

@@ -1,0 +1,16 @@
+<h1><%= @package.name %></h1>
+
+<h2>Plan</h2>
+<p><%= @package.plan.name %> - R$ <%= '%.2f' % @package.plan.price %></p>
+
+<h2>Additional Services</h2>
+<ul>
+  <% @package.additional_services.each do |service| %>
+    <li><%= service.name %> - R$ <%= '%.2f' % service.price %></li>
+  <% end %>
+</ul>
+
+<h2>Total Price</h2>
+<p>R$ <%= '%.2f' % @package.price %></p>
+
+<a href="<%= packages_path %>">Back to Packages</a>

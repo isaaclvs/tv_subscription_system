@@ -1,0 +1,23 @@
+<h1>Clientes</h1>
+<%= link_to "← Voltar", root_path %>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Assinaturas</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.age %> anos</td>
+        <td><%= customer.subscriptions.count %> assinatura(s)</td>
+        <td><%= link_to "Ver", customer_path(customer) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

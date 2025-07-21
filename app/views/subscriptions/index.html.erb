@@ -1,0 +1,45 @@
+<h1>Assinaturas</h1>
+<%= link_to "← Voltar", root_path %>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Plano/Pacote</th>
+      <th>Serviços Extras</th>
+      <th>Valor Mensal</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subscriptions.each do |subscription| %>
+      <tr>
+        <td>
+          <strong><%= subscription.customer.name %></strong><br>
+          <%= subscription.customer.age %> anos
+        </td>
+        <td>
+          <strong><%= subscription.plan&.name || subscription.package&.name %></strong><br>
+          <%= subscription.plan ? "Plano" : "Pacote" %>
+        </td>
+        <td>
+          <% if subscription.additional_services.any? %>
+            <% subscription.additional_services.each do |service| %>
+              [<%= service.name %>]
+            <% end %>
+          <% else %>
+            Nenhum
+          <% end %>
+        </td>
+        <td>
+          R$ <%= number_with_precision(subscription.booklet.total_amount / 12, precision: 2) %>
+        </td>
+        <td>Ativa</td>
+        <td>
+          <%= link_to "Ver", subscription_path(subscription) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,22 @@
+<h1>Additional Services</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @additional_services.each do |service| %>
+      <tr>
+        <td><%= service.name %></td>
+        <td>R$ <%= '%.2f' % service.price %></td>
+        <td><a href="<%= additional_service_path(service) %>">View</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="<%= root_path %>">Back to Home</a>
