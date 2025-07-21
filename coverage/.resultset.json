@@ -1,6 +1,104 @@
 {
   "RSpec": {
-    "coverage": {},
-    "timestamp": 1753110505
+    "coverage": {
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/additional_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/customer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/package_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/package.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/models/plan.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/home/isaac-alves/workspace/projects/tv_subscription_system/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {}
+      }
+    },
+    "timestamp": 1753114493
   }
 }
