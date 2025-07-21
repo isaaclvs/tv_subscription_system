@@ -4,4 +4,5 @@
 <p>Name: <%= @plan.name %></p>
 <p>Price: R$ <%= '%.2f' % @plan.price %></p>
 
+<a href="<%= edit_plan_path(@plan) %>">Edit Plan</a> |
 <a href="<%= plans_path %>">Back to Plans</a>

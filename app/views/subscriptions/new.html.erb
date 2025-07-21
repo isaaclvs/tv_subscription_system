@@ -1,0 +1,50 @@
+<h1>New Subscription</h1>
+
+<%= form_with(model: @subscription_form, url: subscriptions_path, local: true) do |form| %>
+  <% if @subscription_form.errors.any? %>
+    <div>
+      <h2><%= pluralize(@subscription_form.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+      <ul>
+        <% @subscription_form.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :customer_id, "Customer" %>
+    <%= form.select :customer_id, options_from_collection_for_select(@customers, :id, :name), { prompt: "Select a Customer" } %>
+  </div>
+
+  <div>
+    <h3>Choose Plan OR Package (not both):</h3>
+    
+    <div>
+      <%= form.label :plan_id, "Plan (optional)" %>
+      <%= form.select :plan_id, options_from_collection_for_select(@plans, :id, lambda { |p| "#{p.name} - R$ #{sprintf('%.2f', p.price)}" }), { prompt: "Select a Plan" } %>
+    </div>
+
+    <div>
+      <%= form.label :package_id, "Package (optional)" %>
+      <%= form.select :package_id, options_from_collection_for_select(@packages, :id, lambda { |p| "#{p.name} - R$ #{sprintf('%.2f', p.price)}" }), { prompt: "Select a Package" } %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.label :additional_service_ids, "Additional Services (optional)" %>
+    <p><small>Note: If using a package, you cannot add services already included in the package.</small></p>
+    <% @additional_services.each do |service| %>
+      <div>
+        <%= check_box_tag "subscription_form[additional_service_ids][]", service.id, false %>
+        <%= label_tag "subscription_form_additional_service_ids_#{service.id}", "#{service.name} - R$ #{sprintf('%.2f', service.price)}" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Subscription" %>
+  </div>
+<% end %>
+
+<a href="<%= subscriptions_path %>">Back to Subscriptions</a>

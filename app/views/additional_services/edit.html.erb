@@ -1,0 +1,31 @@
+<h1>Edit Additional Service</h1>
+
+<%= form_with(model: @additional_service, local: true) do |form| %>
+  <% if @additional_service.errors.any? %>
+    <div>
+      <h2><%= pluralize(@additional_service.errors.count, "error") %> prohibited this service from being saved:</h2>
+      <ul>
+        <% @additional_service.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price, step: 0.01, min: 0 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<a href="<%= additional_service_path(@additional_service) %>">Show</a> |
+<a href="<%= additional_services_path %>">Back to Additional Services</a>

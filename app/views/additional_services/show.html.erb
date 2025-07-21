@@ -4,4 +4,5 @@
 <p>Name: <%= @additional_service.name %></p>
 <p>Price: R$ <%= '%.2f' % @additional_service.price %></p>
 
+<a href="<%= edit_additional_service_path(@additional_service) %>">Edit Service</a> |
 <a href="<%= additional_services_path %>">Back to Additional Services</a>
