@@ -47,5 +47,18 @@ RSpec.describe CreateSubscriptionService do
         expect(result.errors).to include("Must have either plan or package")
       end
     end
+
+    context 'with package subscription' do
+      it 'creates subscription with package successfully' do
+        service = described_class.new(customer: customer, package: package)
+        result = service.call
+
+        expect(result.success?).to be true
+        expect(result.subscription).to be_persisted
+        expect(result.subscription.package).to eq package
+        expect(result.subscription.booklet).to be_present
+        expect(result.subscription.invoices.count).to eq 12
+      end
+    end
   end
 end

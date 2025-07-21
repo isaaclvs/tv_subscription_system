@@ -55,5 +55,23 @@ RSpec.describe BillingService do
         expect(result.errors).to include("Billing already exists for this subscription")
       end
     end
+
+    context 'date calculations' do
+      it 'creates invoices for next 12 months' do
+        travel_to Date.new(2024, 6, 15) do
+          subscription.update!(created_at: Time.current)
+          result = subject.call
+
+          expect(subscription.invoices.count).to eq 12
+          
+          # Check first and last invoice dates
+          first_invoice = subscription.invoices.order(:due_date).first
+          last_invoice = subscription.invoices.order(:due_date).last
+          
+          expect(first_invoice.due_date).to eq Date.new(2024, 7, 15)
+          expect(last_invoice.due_date).to eq Date.new(2025, 6, 15)
+        end
+      end
+    end
   end
 end
