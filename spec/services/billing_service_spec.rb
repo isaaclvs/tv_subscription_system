@@ -63,11 +63,11 @@ RSpec.describe BillingService do
           result = subject.call
 
           expect(subscription.invoices.count).to eq 12
-          
+
           # Check first and last invoice dates
           first_invoice = subscription.invoices.order(:due_date).first
           last_invoice = subscription.invoices.order(:due_date).last
-          
+
           expect(first_invoice.due_date).to eq Date.new(2024, 7, 15)
           expect(last_invoice.due_date).to eq Date.new(2025, 6, 15)
         end

@@ -13,7 +13,7 @@ RSpec.describe "Edge Cases", type: :request do
           customer: { name: "Valid Customer", age: 25 }
         }
       }.to change(Customer, :count).by(1)
-      
+
       expect(response).to redirect_to(Customer.last)
     end
 
@@ -23,7 +23,7 @@ RSpec.describe "Edge Cases", type: :request do
           plan: { name: "Valid Plan", price: 50.00 }
         }
       }.to change(Plan, :count).by(1)
-      
+
       expect(response).to redirect_to(Plan.last)
     end
 
@@ -33,7 +33,7 @@ RSpec.describe "Edge Cases", type: :request do
           additional_service: { name: "Valid Service", price: 10.00 }
         }
       }.to change(AdditionalService, :count).by(1)
-      
+
       expect(response).to redirect_to(AdditionalService.last)
     end
 
@@ -41,7 +41,7 @@ RSpec.describe "Edge Cases", type: :request do
       get "/customers"
       expect(response).to have_http_status(:success)
 
-      get "/plans" 
+      get "/plans"
       expect(response).to have_http_status(:success)
 
       get "/additional_services"

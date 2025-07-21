@@ -15,7 +15,7 @@ class SubscriptionsController < ApplicationController
 
   def create
     @subscription_form = SubscriptionForm.new(subscription_form_params)
-    
+
     if @subscription_form.valid?
       result = CreateSubscriptionService.new(
         customer: Customer.find(@subscription_form.customer_id),
@@ -23,7 +23,7 @@ class SubscriptionsController < ApplicationController
         package: @subscription_form.package_id.present? ? Package.find(@subscription_form.package_id) : nil,
         additional_services: AdditionalService.where(id: @subscription_form.additional_service_ids.reject(&:blank?))
       ).call
-      
+
       if result.success?
         redirect_to result.subscription, notice: "Subscription was successfully created."
       else

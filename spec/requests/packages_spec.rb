@@ -28,12 +28,12 @@ RSpec.describe "Packages", type: :request do
 
   describe "POST /packages" do
     it "handles package creation" do
-      post "/packages", params: { 
-        package: { 
-          name: "Test Package", 
-          plan_id: plan.id, 
+      post "/packages", params: {
+        package: {
+          name: "Test Package",
+          plan_id: plan.id,
           price: 100.0,
-          additional_service_ids: [service.id]
+          additional_service_ids: [ service.id ]
         }
       }
       expect(response.status).to be_between(200, 422)

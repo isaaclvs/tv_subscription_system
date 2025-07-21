@@ -16,7 +16,7 @@ class PackagesController < ApplicationController
 
   def create
     @package = Package.new(package_params.except(:additional_service_ids))
-    
+
     if @package.save
       if params[:package][:additional_service_ids].present?
         service_ids = params[:package][:additional_service_ids].reject(&:blank?)
