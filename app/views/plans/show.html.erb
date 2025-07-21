@@ -1,0 +1,7 @@
+<h1><%= @plan.name %></h1>
+
+<h2>Details</h2>
+<p>Name: <%= @plan.name %></p>
+<p>Price: R$ <%= '%.2f' % @plan.price %></p>
+
+<a href="<%= plans_path %>">Back to Plans</a>

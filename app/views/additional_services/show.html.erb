@@ -1,0 +1,7 @@
+<h1><%= @additional_service.name %></h1>
+
+<h2>Details</h2>
+<p>Name: <%= @additional_service.name %></p>
+<p>Price: R$ <%= '%.2f' % @additional_service.price %></p>
+
+<a href="<%= additional_services_path %>">Back to Additional Services</a>

@@ -1,0 +1,30 @@
+<h1>Packages</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Plan</th>
+      <th>Services</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @packages.each do |package| %>
+      <tr>
+        <td><%= package.name %></td>
+        <td><%= package.plan.name %></td>
+        <td>
+          <% package.additional_services.each do |service| %>
+            <%= service.name %><br>
+          <% end %>
+        </td>
+        <td>R$ <%= '%.2f' % package.price %></td>
+        <td><a href="<%= package_path(package) %>">View</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="<%= root_path %>">Back to Home</a>

@@ -1,0 +1,22 @@
+<h1>Plans</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @plans.each do |plan| %>
+      <tr>
+        <td><%= plan.name %></td>
+        <td>R$ <%= '%.2f' % plan.price %></td>
+        <td><a href="<%= plan_path(plan) %>">View</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="<%= root_path %>">Back to Home</a>
