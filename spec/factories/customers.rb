@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :customer do
-    name { "MyString" }
-    age { 1 }
+    name { Faker::Name.name }
+    age { rand(18..80) }
   end
 end

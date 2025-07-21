@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :booklet do
-    subscription { nil }
-    total_amount { "9.99" }
+    subscription
+    total_amount { 600.00 }
   end
 end

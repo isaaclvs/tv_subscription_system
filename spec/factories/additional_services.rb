@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :additional_service do
-    name { "MyString" }
-    price { "9.99" }
+    name { Faker::Commerce.product_name }
+    price { Faker::Commerce.price(range: 5.0..50.0) }
   end
 end

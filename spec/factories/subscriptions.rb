@@ -1,7 +1,12 @@
 FactoryBot.define do
   factory :subscription do
-    customer { nil }
-    plan { nil }
+    customer
+    plan
     package { nil }
+    
+    trait :with_package do
+      plan { nil }
+      package
+    end
   end
 end
