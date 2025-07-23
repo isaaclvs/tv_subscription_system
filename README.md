@@ -22,8 +22,8 @@ Sistema completo de gerenciamento de assinaturas de TV desenvolvido em Rails seg
 - `Account`, `Invoice`, `Booklet`: Sistema de billing
 
 ### Service Objects
-- `CreateSubscriptionService`: Orquestra criação + validações
-- `BillingService`: Gera faturamento de 12 meses automático
+- `CreateSubscription`: Orquestra criação + validações
+- `Billing`: Gera faturamento de 12 meses automático
 
 ### Validações Críticas
 1. **XOR**: Assinatura com plano OU pacote (constraint no DB)
@@ -160,7 +160,7 @@ Line Coverage: 88.08% (340 / 386)
 # Criar assinatura válida
 customer = Customer.first
 plan = Plan.first
-service = CreateSubscriptionService.new(
+service = CreateSubscription.new(
   customer: customer, 
   plan: plan,
   additional_services: [AdditionalService.first]
@@ -172,7 +172,7 @@ service.subscription.accounts.count  # => 12 (plan + service)
 service.subscription.booklet.total_amount # => valor anual
 
 # Testar validações
-invalid = CreateSubscriptionService.new(
+invalid = CreateSubscription.new(
   customer: customer,
   plan: plan,
   package: Package.first  # ERRO: não pode ter ambos
