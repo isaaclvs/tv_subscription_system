@@ -142,9 +142,9 @@ Segue exemplo da saída atual dos testes RSpec:
 
 ```bash
 $ rspec
-92 examples, 0 failures, 9 pending
+88 examples, 0 failures, 9 pending
 
-Coverage report generated for RSpec to coverage/.
+Coverage report generated for RSpec to /home/isaac/workspace/projects/tv_subscription_system/coverage.
 Line Coverage: 88.08% (340 / 386)
 ```
 
