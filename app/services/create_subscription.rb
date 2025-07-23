@@ -1,6 +1,6 @@
 require "ostruct"
 
-class CreateSubscriptionService
+class CreateSubscription
   attr_reader :customer, :plan, :package, :additional_services, :errors
 
   def initialize(customer:, plan: nil, package: nil, additional_services: [])
@@ -82,7 +82,7 @@ class CreateSubscriptionService
   end
 
   def create_billing_for_subscription(subscription)
-    BillingService.new(subscription: subscription).call
+    Billing.new(subscription: subscription).call
   end
 
   def success_result(subscription)

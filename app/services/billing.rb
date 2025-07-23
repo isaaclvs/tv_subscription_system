@@ -1,6 +1,6 @@
 require "ostruct"
 
-class BillingService
+class Billing
   attr_reader :subscription, :errors
 
   def initialize(subscription:)

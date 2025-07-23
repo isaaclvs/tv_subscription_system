@@ -17,7 +17,7 @@ class SubscriptionsController < ApplicationController
     @subscription_form = SubscriptionForm.new(subscription_form_params)
 
     if @subscription_form.valid?
-      result = CreateSubscriptionService.new(
+      result = CreateSubscription.new(
         customer: Customer.find(@subscription_form.customer_id),
         plan: @subscription_form.plan_id.present? ? Plan.find(@subscription_form.plan_id) : nil,
         package: @subscription_form.package_id.present? ? Package.find(@subscription_form.package_id) : nil,

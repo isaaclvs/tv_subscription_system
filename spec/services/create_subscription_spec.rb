@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CreateSubscriptionService do
+RSpec.describe CreateSubscription do
   let(:customer) { create(:customer) }
   let(:plan) { create(:plan) }
   let(:package) { create(:package) }

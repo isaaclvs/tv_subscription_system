@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BillingService do
+RSpec.describe Billing do
   let(:customer) { create(:customer) }
   let(:plan) { create(:plan, price: 50.00) }
   let(:subscription) { create(:subscription, customer: customer, plan: plan) }
